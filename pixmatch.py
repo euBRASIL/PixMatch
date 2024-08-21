@@ -113,13 +113,13 @@ def InitialPage():
     # ViewHelp
     hlp_dtl = f"""<span style="font-size: 26px;">
     <ol>
-    <li style="font-size:15px";>Game play opens with (a) a sidebar picture and (b) a N x N grid of picture buttons, where N=6:Easy, N=7:Medium, N=8:Hard.</li>
-    <li style="font-size:15px";>You need to match the sidebar picture with a grid picture button, by pressing the (matching) button (as quickly as possible).</li>
-    <li style="font-size:15px";>Each correct picture match will earn you <strong>+N</strong> points (where N=5:Easy, N=3:Medium, N=1:Hard); each incorrect picture match will earn you <strong>-1</strong> point.</li>
-    <li style="font-size:15px";>The sidebar picture and the grid pictures will dynamically regenerate after a fixed seconds interval (Easy=8, Medium=6, Hard=5). Each regeneration will have a penalty of <strong>-1</strong> point</li>
-    <li style="font-size:15px";>Each of the grid buttons can only be pressed once during the entire game.</li>
-    <li style="font-size:15px";>The game completes when all the grid buttons are pressed.</li>
-    <li style="font-size:15px";>At the end of the game, if you have a positive score, you will have <strong>won</strong>; otherwise, you will have <strong>lost</strong>.</li>
+    <li style="font-size:15px";>O jogo começa com (a) uma imagem da barra lateral e (b) uma grade N x N de botões de imagem, onde N=6:Fácil, N=7:Médio, N=8:Difícil.</li>
+    <li style="font-size:15px";>Você precisa combinar a imagem da barra lateral com um botão de imagem da grade, pressionando o botão (correspondente) (o mais rápido possível).</li>
+    <li style="font-size:15px";>Cada correspondência correta de imagem renderá <strong>+N</strong> pontos (onde N=5:Fácil, N=3:Médio, N=1:Difícil); cada correspondência incorreta de imagem renderá <strong>-1</strong> ponto.</li>
+    <li style="font-size:15px";>A imagem da barra lateral e as imagens da grade serão regeneradas dinamicamente após um intervalo fixo de segundos (Fácil=8, Médio=6, Difícil=5). Cada regeneração terá uma penalidade de <strong>-1</strong> ponto</li>
+    <li style="font-size:15px";>Cada um dos botões da grade só pode ser pressionado uma vez durante todo o jogo.</li>
+    <li style="font-size:15px";>O jogo termina quando todos os botões da grade são pressionados.</li>
+    <li style="font-size:15px";>No final do jogo, se você tiver uma pontuação positiva, você terá <strong>ganho</strong>; caso contrário, você terá<strong>perdido</strong>.</li>
     </ol></span>""" 
 
     sc1, sc2 = st.columns(2)
@@ -128,12 +128,12 @@ def InitialPage():
     GameHelpImg = Image.open(GameHelpImg).resize((550, 550))
     sc2.image(GameHelpImg, use_column_width='auto')
 
-    sc1.subheader('Rules | Playing Instructions:')
+    sc1.subheader('Regras | Instruções para Jogar:')
     sc1.markdown(horizontal_bar, True)
     sc1.markdown(hlp_dtl, unsafe_allow_html=True)
     st.markdown(horizontal_bar, True)
 
-    author_dtl = "<strong>Happy Playing: 😎 Shawn Pereira: shawnpereira1969@gmail.com</strong>"
+    author_dtl = "<strong>❝Desenvolvedor❞ ✎Ricardo Costa( globoricardo☯gmail.com )</strong>"
     st.markdown(author_dtl, unsafe_allow_html=True)
 
 def ReadPictureFile(wch_fl):
@@ -333,7 +333,7 @@ def Main():
         mystate.GameDetails[0] = st.radio('Difficulty Level:', options=('Easy', 'Medium', 'Hard'), index=1, horizontal=True, )
         mystate.GameDetails[3] = st.text_input("Player Name, Country", placeholder='Shawn Pereira, India', help='Optional input only for Leaderboard')
 
-        if st.button(f"🕹️ New Game", use_container_width=True):
+        if st.button(f"⛏︎ &nbsp;&nbsp;&nbsp; Minerar", use_container_width=True):
 
             if mystate.GameDetails[0] == 'Easy':
                 mystate.GameDetails[1] = 8         # secs interval
